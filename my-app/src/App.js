@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import Dashboard from './Dashboard'; // Replace with actual path
+import Authentication from './Authentication'; // Replace with actual path
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,9 +44,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Authentication Check</h1>
-      <p>User Logged In: {isLoggedIn ? 'Yes' : 'No'}</p>
-      <p>User Username: {userUsername}</p>
+      {isLoggedIn ? (
+        <Dashboard username={userUsername} />
+      ) : (
+        <Authentication />
+      )}
     </div>
   );
 }

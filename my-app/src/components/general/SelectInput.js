@@ -8,7 +8,7 @@ const SelectInput = ({ label, options, className, value, setValue, inputAttribut
     };
 
     return (
-        <div className={`select-input-wrapper ${className}`}>
+        <div className={`select ${className}`}>
             {label && <label>{label}</label>}
             <select
                 value={value}

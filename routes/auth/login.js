@@ -1,27 +1,29 @@
-const express = require('express')
-const router = express.Router()
-const User = require('../../models/User')
-const { comparePassword } = require('../../utils/password')
-const { generateToken } = require('../../utils/tokens')
+import React from 'react';
+import './auth.css';
 
-router.post('/', async (req, res) => {
-    User.findOne({ where: { username: req.body.username } })
-        .then(user => {
-            comparePassword(req.body.password, user.password)
-                .then(correct => {
-                    if (correct) {
-                        generateToken(user.id, user.username)
-                            .then(token => res.send({
-                                message: 'Logged in successfully',
-                                accessToken: token,
-                            }))
-                            .catch(err => res.status(500).send(err))
-                    } else {
-                        res.status(401).send({ message: 'Incorrect credentials' })
-                    }
-                })
-        })
-        .catch(() => res.status(401).send({ message: 'Incorrect credentials' }))
-})
+function Login({ username, password, setUsername, setPassword }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Logging in with:', { username, password });
+  };
 
-module.exports = router
+  return (
+    <form className="auth-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Log In</button>
+    </form>
+  );
+}
+
+export default Login;

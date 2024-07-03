@@ -13,7 +13,7 @@ const Input = ({ label, type, className, value, setValue, icon, inputAttributes,
     const inputType = type === 'password' ? 'hidden' ? 'password' : 'text' : type;
 
     return (
-        <div className={`input-group ${className}`}>
+        <div className={`group ${className}`}>
             <div className='icon-wrapper'>
                 {icon && <FontAwesomeIcon icon={icon} className="icon-default" />}
                 {label && <label>{label}</label>}

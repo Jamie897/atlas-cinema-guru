@@ -14,11 +14,11 @@ const Input = ({ label, type, className, value, setValue, icon, inputAttributes,
 
     return (
         <div className={`input-group ${className}`}>
-            <div className='label-icon-wrapper'>
+            <div className='icon-wrapper'>
                 {icon && <FontAwesomeIcon icon={icon} className="icon-default" />}
                 {label && <label>{label}</label>}
             </div>
-            <div className="input-wrapper">
+            <div className="wrapper">
                 <input
                     type={inputType}
                     value={value}

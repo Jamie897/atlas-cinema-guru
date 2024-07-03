@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './auth.css';
+import axios from 'axios';
+import Login from './Login';
+import Register from './Register';
 
 function Authentication({ setIsLoggedIn, setUserUsername }) {
   const [_switch, setSwitch] = useState(true);
@@ -14,6 +17,22 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
     setSwitch(false);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const url = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
+    
+    axios.post(url, { username, password })
+      .then((response) => {
+        localStorage.setItem('accessToken', response.data.token);
+        setUserUsername(username);
+        setIsLoggedIn(true);
+      })
+      .catch((error) => {
+        console.error('Error during authentication:', error);
+      });
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-header">
@@ -24,23 +43,26 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
           Sign Up
         </button>
       </div>
-      <form className="auth-form">
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">{_switch ? 'Log In' : 'Register'}</button>
+      <form onSubmit={handleSubmit}>
+        {_switch ? (
+          <Login
+            username={username}
+            password={password}
+            setUsername={setUsername}
+            setPassword={setPassword}
+          />
+        ) : (
+          <Register
+            username={username}
+            password={password}
+            setUsername={setUsername}
+            setPassword={setPassword}
+          />
+        )}
       </form>
     </div>
   );
 }
 
 export default Authentication;
+

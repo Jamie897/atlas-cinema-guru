@@ -4,7 +4,6 @@ import './auth.css';
 function Register({ username, password, setUsername, setPassword }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your registration logic here
     console.log('Registering with:', { username, password });
   };
 

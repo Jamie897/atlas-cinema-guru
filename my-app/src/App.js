@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Dashboard from './Dashboard'; // Replace with actual path
-import Authentication from './Authentication'; // Replace with actual path
+import Dashboard from './Dashboard'; 
+import Authentication from './Authentication';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -39,8 +39,7 @@ function App() {
   const handleAuthenticationFailure = () => {
     setIsLoggedIn(false);
     setUserUsername('');
-    // Optionally: handle other tasks on authentication failure
-  };
+  }
 
   return (
     <div className="App">

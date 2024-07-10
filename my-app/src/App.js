@@ -21,7 +21,7 @@ function App() {
           });
 
           if (response.status === 200) {
-            setUserUsername(response.data.username); // Assuming response.data contains username
+            setUserUsername(response.data.username); 
             setIsLoggedIn(true);
           } else {
             handleAuthenticationFailure();

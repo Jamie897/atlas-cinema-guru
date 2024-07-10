@@ -1,23 +1,22 @@
-import React from "react";
+import React from 'react';
 import './general.css';
 
 const SearchBar = ({ title, setTitle }) => {
-
-        const handleInput = (e) => {
-            setTitle(e.target.value);
-        };
-
-        return (
-            <div className="search-bar-wrapper">
-                <input
-                    type="search"
-                    className="search-bar"
-                    placeholder="Search..."
-                    value={title}
-                    onChange={handleInput}
-                />
-            </div>
-        );
+    const handleInput = (event) => {
+        setTitle(event.target.value);
     };
+
+    return (
+        <div className="search-bar-container">
+            <input
+                type="text"
+                value={title}
+                onChange={handleInput}
+                className="search-bar-input"
+                placeholder="Search..."
+            />
+        </div>
+    );
+};
 
 export default SearchBar;

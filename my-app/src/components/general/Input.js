@@ -1,41 +1,27 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './general.css';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import './general.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
-const Input = ({ label, type, className, value, setValue, icon, inputAttributes, hidden, setHidden, togglePassword }) => {
-
-    const handleInput = (e) => {
-        setValue(e.target.value);
+const Input = ({ label, type, className, value, setValue, icon, inputAttributes }) => {
+    const handleInput = (event) => {
+        setValue(event.target.value);
     };
 
-    
-    const inputType = type === 'password' ? 'hidden' ? 'password' : 'text' : type;
-
     return (
-        <div className={`group ${className}`}>
-            <div className='icon-wrapper'>
-                {icon && <FontAwesomeIcon icon={icon} className="icon-default" />}
-                {label && <label>{label}</label>}
-            </div>
-            <div className="wrapper">
+        <div className={`input-container ${className}`}>
+            {label && <label className="input-label">{label}</label>}
+            <div className="input-wrapper">
+                {icon && <FontAwesomeIcon icon={icon} className="input-icon" />}
                 <input
-                    type={inputType}
+                    type={type}
                     value={value}
                     onChange={handleInput}
                     {...inputAttributes}
+                    className="input-element"
                 />
-            {type === 'password' && (
-                <FontAwesomeIcon
-                    icon={hidden ? faEye : faEyeSlash}
-                    className="toggle-password-icon"
-                    onClick={togglePassword}
-                />
-            )}
             </div>
         </div>
     );
-}
+};
 
 export default Input;
-  

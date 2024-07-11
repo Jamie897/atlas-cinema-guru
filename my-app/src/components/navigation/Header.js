@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import './navigation.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

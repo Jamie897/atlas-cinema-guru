@@ -42,7 +42,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${isLoggedIn ? 'dashboard-view' : 'auth-view'}`}>
       {isLoggedIn ? (
         <Dashboard username={userUsername} />
       ) : (

@@ -8,16 +8,16 @@ const Input = ({ label, type, className, value, setValue, icon, inputAttributes 
     };
 
     return (
-        <div className={`input-container ${className}`}>
-            {label && <label className="input-label">{label}</label>}
-            <div className="input-wrapper">
-                {icon && <FontAwesomeIcon icon={icon} className="input-icon" />}
+        <div className={`inputContainer ${className}`}>
+            {label && <label className="inputLabel">{label}</label>}
+            <div className="inputWrapper">
+                {icon && <FontAwesomeIcon icon={icon} className="inputIcon" />}
                 <input
                     type={type}
                     value={value}
                     onChange={handleInput}
                     {...inputAttributes}
-                    className="input-element"
+                    className="inputElement"
                 />
             </div>
         </div>
@@ -25,3 +25,4 @@ const Input = ({ label, type, className, value, setValue, icon, inputAttributes 
 };
 
 export default Input;
+

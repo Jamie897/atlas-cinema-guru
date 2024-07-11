@@ -7,12 +7,12 @@ const SearchBar = ({ title, setTitle }) => {
     };
 
     return (
-        <div className="search-bar-container">
+        <div className="searchBarContainer">
             <input
                 type="text"
                 value={title}
                 onChange={handleInput}
-                className="search-bar-input"
+                className="searchBarInput"
                 placeholder="Search..."
             />
         </div>
@@ -20,3 +20,4 @@ const SearchBar = ({ title, setTitle }) => {
 };
 
 export default SearchBar;
+

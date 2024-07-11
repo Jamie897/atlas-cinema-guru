@@ -1,0 +1,87 @@
+@import '../../App.css';
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputLabel {
+    color: var(--color-black);
+}
+
+.inputIcon {
+    color: var(--color-gray);
+    margin-right: 8px;
+}
+
+.inputElement {
+    font-family: var(--font-family);
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--color-dark-red);
+    width: 100%;
+}
+
+.inputElement:focus {
+    outline: none;
+    border-bottom-color: var(--color-dark-red);
+}
+
+/* Button Component */
+.customButton {
+    font-size: 15px;
+    background-color: var(--color-dark-red);
+    color: var(--color-white);
+    border: none;
+    margin: 5px;
+    padding: 8px 16px;
+    transition: background-color 0.5s ease;
+}
+
+.buttonIcon {
+    margin-right: 8px;
+}
+
+/* SearchBar Component */
+.searchBarContainer {
+    margin: 5%;
+}
+
+.searchBarInput {
+    font-family: var(--font-family);
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--color-dark-red);
+    width: 100%;
+}
+
+.searchBarInput:focus {
+    outline: none;
+    border-bottom-color: var(--color-dark-red);
+}
+
+/* SelectInput Component */
+.selectInputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.selectInputLabel {
+    color: var(--color-black);
+}
+
+.selectInputElement {
+    font-family: var(--font-family);
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--color-dark-red);
+    width: 100%;
+}

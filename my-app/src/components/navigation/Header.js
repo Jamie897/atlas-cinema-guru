@@ -14,7 +14,7 @@ const Header = ({ userUsername, setIsLoggedIn }) => {
     return (
         <nav className="header-nav">
             <img src="https://picsum.photos/100/100" alt="Avatar" className="header-avatar" />
-            <p className="header-welcome">Welcome, {userUsername}!</p>
+            <p className="header-welcome">Welcome, JimJam!</p>
             <span className="header-logout" onClick={logout}>
                 <FontAwesomeIcon icon={faSignOutAlt} /> Logout
             </span>

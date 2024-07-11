@@ -3,7 +3,7 @@ import axios from 'axios';
 import './dashboard.css';
 import MovieCard from '../../components/movies/MovieCard';
 import Filter from '../../components/movies/Filter';
-import Button from '../../components/Button'; // Make sure this component exists and is correctly imported
+import Button from '../../components/Button'; 
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
